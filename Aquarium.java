@@ -172,16 +172,15 @@ public class Aquarium {
 
         // Rightside Coral
         Color[] rightColors = {
-                new Color(255, 171, 187), // Light pink outer layer
-                new Color(255, 112, 112), // Medium coral middle layer
-                new Color(255, 76, 76) // Dark coral inner layer
+                new Color(255, 171, 187),
+                new Color(255, 112, 112),
+                new Color(255, 76, 76)
         };
         int[] rightStartWidths = { 350, 320, 290 };
 
         for (int layer = 0; layer < rightColors.length; layer++) {
             for (int i = 0; i < 7; i++) {
                 double stepWidth = rightStartWidths[layer] - (i * 50);
-                // Keep bottom inner step from dropping below width 5
                 if (stepWidth < 5) {
                     stepWidth = 5;
                 }
@@ -280,21 +279,21 @@ public class Aquarium {
 
     public static void drawRandomFilledRectangle(PainterAPI p, double width, double height, double x, double y) {
         Random rand = new Random();
-        int r = rand.nextInt(80); // Low red (0–79) for richer greens
-        int g = 100 + rand.nextInt(156); // High green (100–255)
-        int b = rand.nextInt(80); // Low blue (0–79)
+        int r = rand.nextInt(80);
+        int g = 100 + rand.nextInt(156);
+        int b = rand.nextInt(80);
         Color randomColor = new Color(r, g, b);
 
         p.liftPen();
-        p.moveTo(x, y); // Move to bottom-left corner without drawing
+        p.moveTo(x, y);
         p.setPenColor(randomColor);
-        p.lowerPen(); // Start tracing the outline
+        p.lowerPen();
         p.startFill(randomColor);
 
-        p.moveTo(x + width, y); // Bottom edge to bottom-right
-        p.moveTo(x + width, y + height); // Right edge to top-right
-        p.moveTo(x, y + height); // Top edge to top-left
-        p.moveTo(x, y); // Left edge back to bottom-left
+        p.moveTo(x + width, y);
+        p.moveTo(x + width, y + height);
+        p.moveTo(x, y + height);
+        p.moveTo(x, y);
 
         p.finishFill();
         p.liftPen();
@@ -316,7 +315,7 @@ public class Aquarium {
             p.moveTo(px, py);
         }
 
-        p.moveTo(x + radius, y); // Draw flat top edge back to start
+        p.moveTo(x + radius, y);
         p.finishFill();
         p.liftPen();
     }
