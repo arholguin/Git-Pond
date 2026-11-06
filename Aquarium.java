@@ -9,7 +9,7 @@ public class Aquarium {
         int height = 600;
         int steps = 20;
 
-        CanvasAPI canvas = new SwingCanvasImpl(width, height, "Top-to-Bottom Blue Gradient");
+        CanvasAPI canvas = new SwingCanvasImpl(width, height, "My First Drawing");
         PainterAPI painter = canvas.getPainter();
 
         Color topColor = new Color(10, 25, 75); // Dark Navy Blue
