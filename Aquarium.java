@@ -215,6 +215,21 @@ public class Aquarium {
         drawFilledCircle(painter, 200, 130, 10, new Color(255, 200, 90));
         drawFilledTriangle(painter, 10, 182, 135, new Color(255, 200, 90));
 
+        // Bubbles
+        drawBubbles(painter, -100, 100);
+        drawBubbles(painter, -110, 80);
+        drawBubbles(painter, -100, 60);
+
+        drawBubbles(painter, 290, 190);
+        drawBubbles(painter, 300, 210);
+        drawBubbles(painter, 290, 230);
+        drawBubbles(painter, 310, 260);
+
+        drawBubbles(painter, -230, 140);
+        drawBubbles(painter, -220, 160);
+        drawBubbles(painter, -230, 180);
+        drawBubbles(painter, -215, 200);
+
     }
 
     public static void drawFilledCircle(PainterAPI p, double x, double y, double radius, Color color) {
@@ -286,25 +301,48 @@ public class Aquarium {
     }
 
     public static void drawFilledHalfCircle(PainterAPI p, double radius, double x, double y, Color color) {
-        int segments = 60; // Higher numbers produce a smoother curve
+        int segments = 60;
 
         p.liftPen();
-        p.moveTo(x + radius, y); // Move to right edge of the flat top
+        p.moveTo(x + radius, y);
         p.setPenColor(color);
         p.lowerPen();
         p.startFill(color);
 
-        // Trace the bottom arc from 0 to -180 degrees
         for (int i = 1; i <= segments; i++) {
             double angle = Math.PI * i / segments;
             double px = x + radius * Math.cos(angle);
-            double py = y - radius * Math.sin(angle); // Subtract to curve downward
+            double py = y - radius * Math.sin(angle);
             p.moveTo(px, py);
         }
 
         p.moveTo(x + radius, y); // Draw flat top edge back to start
         p.finishFill();
         p.liftPen();
+    }
+
+    public static void drawBubbles(PainterAPI p, double x, double y) {
+        double radius = 10;
+        p.circle(radius);
+        p.liftPen();
+        p.moveTo(x, y);
+        p.setPenColor(new Color(160, 160, 255));
+        p.lowerPen();
+        p.circle(radius);
+        radius -= 7;
+
+        p.liftPen();
+        p.moveTo(x - 2, y + 10);
+        p.lowerPen();
+        p.circle(radius);
+        radius -= 1.5;
+
+        p.liftPen();
+        p.moveTo(x + 5, y + 5);
+        p.lowerPen();
+        p.circle(radius);
+        p.liftPen();
+
     }
 
 }
