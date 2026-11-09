@@ -24,7 +24,8 @@ public class Aquarium {
         for (int i = 0; i < steps; i++) {
             double ratio = (double) i / (steps - 1);
 
-            int r = (int) (topColor.getRed() + ratio * (bottomColor.getRed() - topColor.getRed()));
+            int r = (int) (topColor.getRed() + ratio * (bottomColor.getRed() - topColor.getRed())); // LERP (Linear
+                                                                                                    // interpolatoin)
             int g = (int) (topColor.getGreen() + ratio * (bottomColor.getGreen() - topColor.getGreen()));
             int b = (int) (topColor.getBlue() + ratio * (bottomColor.getBlue() - topColor.getBlue()));
             Color stepColor = new Color(r, g, b);
@@ -228,7 +229,7 @@ public class Aquarium {
         int r = rand.nextInt(80);
         int g = 100 + rand.nextInt(156);
         int b = rand.nextInt(80);
-        Color randomColor = new Color(r, g, b);
+        Color randomColor = new Color(r, g, b); // struggled with color integers to create random green tones
 
         p.liftPen();
         p.moveTo(x, y);
