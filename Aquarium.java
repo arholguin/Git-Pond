@@ -94,61 +94,6 @@ public class Aquarium {
         drawFilledCircle(painter, -120, -340, 75, new Color(79, 70, 0));
         drawFilledCircle(painter, 80, -340, 80, new Color(79, 70, 0));
 
-        // // Leftside Coral
-        // drawFilledRectangle(painter, 225, 25, -400, -300, new Color(255, 171, 187));
-        // drawFilledRectangle(painter, 200, 25, -400, -275, new Color(255, 171, 187));
-        // drawFilledRectangle(painter, 175, 25, -400, -250, new Color(255, 171, 187));
-        // drawFilledRectangle(painter, 150, 25, -400, -225, new Color(255, 171, 187));
-        // drawFilledRectangle(painter, 125, 25, -400, -200, new Color(255, 171, 187));
-        // drawFilledRectangle(painter, 100, 25, -400, -175, new Color(255, 171, 187));
-        // drawFilledRectangle(painter, 75, 25, -400, -150, new Color(255, 171, 187));
-        // drawFilledRectangle(painter, 50, 25, -400, -125, new Color(255, 171, 187));
-        // drawFilledRectangle(painter, 25, 25, -400, -100, new Color(255, 171, 187));
-
-        // drawFilledRectangle(painter, 205, 25, -400, -300, new Color(255, 112, 112));
-        // drawFilledRectangle(painter, 180, 25, -400, -275, new Color(255, 112, 112));
-        // drawFilledRectangle(painter, 155, 25, -400, -250, new Color(255, 112, 112));
-        // drawFilledRectangle(painter, 130, 25, -400, -225, new Color(255, 112, 112));
-        // drawFilledRectangle(painter, 105, 25, -400, -200, new Color(255, 112, 112));
-        // drawFilledRectangle(painter, 80, 25, -400, -175, new Color(255, 112, 112));
-        // drawFilledRectangle(painter, 55, 25, -400, -150, new Color(255, 112, 112));
-        // drawFilledRectangle(painter, 30, 25, -400, -125, new Color(255, 112, 112));
-        // drawFilledRectangle(painter, 5, 25, -400, -100, new Color(255, 112, 112));
-
-        // drawFilledRectangle(painter, 185, 25, -400, -300, new Color(255, 76, 76));
-        // drawFilledRectangle(painter, 160, 25, -400, -275, new Color(255, 76, 76));
-        // drawFilledRectangle(painter, 145, 25, -400, -250, new Color(255, 76, 76));
-        // drawFilledRectangle(painter, 120, 25, -400, -225, new Color(255, 76, 76));
-        // drawFilledRectangle(painter, 85, 25, -400, -200, new Color(255, 76, 76));
-        // drawFilledRectangle(painter, 60, 25, -400, -175, new Color(255, 76, 76));
-        // drawFilledRectangle(painter, 35, 25, -400, -150, new Color(255, 76, 76));
-        // drawFilledRectangle(painter, 10, 25, -400, -125, new Color(255, 76, 76));
-
-        // // Rightside Coral
-        // drawFilledRectangle(painter, 350, 30, 50, -300, new Color(255, 171, 187));
-        // drawFilledRectangle(painter, 300, 30, 100, -275, new Color(255, 171, 187));
-        // drawFilledRectangle(painter, 250, 30, 150, -250, new Color(255, 171, 187));
-        // drawFilledRectangle(painter, 200, 30, 200, -225, new Color(255, 171, 187));
-        // drawFilledRectangle(painter, 150, 30, 250, -200, new Color(255, 171, 187));
-        // drawFilledRectangle(painter, 100, 30, 300, -175, new Color(255, 171, 187));
-        // drawFilledRectangle(painter, 50, 30, 350, -150, new Color(255, 171, 187));
-
-        // drawFilledRectangle(painter, 320, 30, 80, -300, new Color(255, 112, 112));
-        // drawFilledRectangle(painter, 270, 30, 130, -275, new Color(255, 112, 112));
-        // drawFilledRectangle(painter, 220, 30, 180, -250, new Color(255, 112, 112));
-        // drawFilledRectangle(painter, 170, 30, 230, -225, new Color(255, 112, 112));
-        // drawFilledRectangle(painter, 120, 30, 280, -200, new Color(255, 112, 112));
-        // drawFilledRectangle(painter, 70, 30, 330, -175, new Color(255, 112, 112));
-        // drawFilledRectangle(painter, 20, 30, 380, -150, new Color(255, 112, 112));
-
-        // drawFilledRectangle(painter, 290, 30, 130, -300, new Color(255, 76, 76));
-        // drawFilledRectangle(painter, 240, 30, 160, -275, new Color(255, 76, 76));
-        // drawFilledRectangle(painter, 190, 30, 210, -250, new Color(255, 76, 76));
-        // drawFilledRectangle(painter, 140, 30, 260, -225, new Color(255, 76, 76));
-        // drawFilledRectangle(painter, 90, 30, 310, -200, new Color(255, 76, 76));
-        // drawFilledRectangle(painter, 30, 30, 370, -175, new Color(255, 76, 76));
-        // drawFilledRectangle(painter, 5, 30, 395, -150, new Color(255, 76, 76));
-
         // Leftside Coral
         Color[] leftColors = {
                 new Color(255, 171, 187),
@@ -158,7 +103,7 @@ public class Aquarium {
         int[] leftStartWidths = { 225, 205, 185 };
         int[] leftStepCounts = { 9, 9, 8 };
 
-        for (int layer = 0; layer < leftColors.length; layer++) {
+        for (int layer = 0; layer < leftColors.length; layer++) { // loop developing layers
             for (int i = 0; i < leftStepCounts[layer]; i++) {
                 double stepWidth = leftStartWidths[layer] - (i * 25);
                 double stepY = -300 + (i * 25);
@@ -210,17 +155,10 @@ public class Aquarium {
         drawFilledCircle(painter, 391, -238, 5, new Color(170, 0, 0));
         drawFilledCircle(painter, 339, -235, 5, new Color(170, 0, 0));
 
-        // Small fish 1
-        drawFilledCircle(painter, -200, 100, 10, new Color(255, 200, 90));
-        drawFilledTriangle(painter, 10, -191, 105, new Color(255, 200, 90));
-
-        // Small fish 2
-        drawFilledCircle(painter, -100, 190, 20, new Color(255, 200, 90));
-        drawFilledTriangle(painter, 25, -90, 205, new Color(255, 200, 90));
-
-        // Small fish 3
-        drawFilledCircle(painter, 200, 130, 10, new Color(255, 200, 90));
-        drawFilledTriangle(painter, 10, 182, 135, new Color(255, 200, 90));
+        Color fishColor = new Color(255, 200, 90);
+        drawSmallFish(painter, -200, 100, 10, fishColor);
+        drawSmallFish(painter, -100, 190, 20, fishColor);
+        drawSmallFish(painter, 200, 130, 10, fishColor);
 
         // Bubbles
         drawBubbles(painter, -100, 100);
@@ -326,6 +264,16 @@ public class Aquarium {
         p.moveTo(x + radius, y);
         p.finishFill();
         p.liftPen();
+    }
+
+    public static void drawSmallFish(PainterAPI p, double x, double y, double size, Color color) {
+        drawFilledCircle(p, x, y, size, color);
+
+        double tailSize = size;
+        double tailX = x + (size - 1);
+        double tailY = y + (size * 0.5);
+
+        drawFilledTriangle(p, tailSize, tailX, tailY, color);
     }
 
     public static void drawBubbles(PainterAPI p, double x, double y) {
