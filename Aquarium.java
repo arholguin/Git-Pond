@@ -12,8 +12,8 @@ public class Aquarium {
         CanvasAPI canvas = new SwingCanvasImpl(width, height, "My First Drawing");
         PainterAPI painter = canvas.getPainter();
 
-        Color topColor = new Color(10, 25, 75); // Dark Navy Blue
-        Color bottomColor = new Color(135, 206, 250); // Light Sky Blue
+        Color topColor = new Color(10, 25, 75);
+        Color bottomColor = new Color(135, 206, 250);
 
         double rectHeight = (double) height / steps;
         double leftX = -width / 2.0;
@@ -47,13 +47,21 @@ public class Aquarium {
             painter.liftPen();
         }
 
-        // Whale
+        // Whale 1
         drawFilledCircle(painter, 90, 150, 30, new Color(58, 144, 255));
         drawFilledHalfCircle(painter, 50, 110, 180, new Color(58, 144, 255));
         drawFilledHalfCircle(painter, 15, 155, 195, new Color(58, 144, 255));
         drawFilledHalfCircle(painter, 40, 110, 180, new Color(175, 214, 255));
         drawFilledCircle(painter, 77.5, 182.5, 5, Color.BLACK);
         drawFilledCircle(painter, 75, 186.5, 1.5, Color.WHITE);
+
+        // Whale 2
+        drawFilledCircle(painter, -190, 50, 30, new Color(58, 144, 255));
+        drawFilledHalfCircle(painter, 50, -210, 80, new Color(58, 144, 255));
+        drawFilledHalfCircle(painter, 15, -255, 95, new Color(58, 144, 255));
+        drawFilledHalfCircle(painter, 40, -210, 80, new Color(175, 214, 255));
+        drawFilledCircle(painter, -177.5, 82.5, 5, Color.BLACK);
+        drawFilledCircle(painter, -175, 86.5, 1.5, Color.WHITE);
 
         // Main Fish
         drawFilledCircle(painter, 0, -50, 75, new Color(255, 128, 0));
